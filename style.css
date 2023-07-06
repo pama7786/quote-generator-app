@@ -255,3 +255,28 @@ form p#search-message{
     color: var(--colorTwo);
 }
 
+/* section#Fav-quotes */
+h2{
+    font-size: 35px;
+    font-style: italic;
+    background-color: var(--colorFour);
+    text-align: center;
+
+}
+
+div#listFavourite li{
+    background-color: var(--colorFour);
+    color: var(--colorThree);
+    font-size: 25px;
+    line-height: 40px;
+    list-style: none;
+    padding-left: 20px;
+}
+div#listFavourite p{
+    background-color: var(--colorFour);
+    color: var(--colorThree);
+    padding-left: 300px;
+    font-size: 20px;
+    line-height: 40px;
+}
+
