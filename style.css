@@ -184,3 +184,74 @@ section#Main-page{
 
 
 
+/* section#feedback-form */
+section#feedback-form{
+    margin-top:100px;
+    text-align:center;
+    width:400px;
+    margin-left:auto;
+    margin-right:auto;
+    height:250px;
+    line-height:40px;
+    background-color:var(--colorThree);
+}
+
+section#feedback-form input{
+    margin-bottom:20px;
+}
+section#feedback-form h4{
+color:var(--colorTwo);
+font-size:25px;
+}
+section#feedback-form button{
+width:80px;
+height:30px;
+border-radius:20px;
+border:1px solid;
+color:var(--colorTwo);
+background-color:var(--colorRed);
+font-weight:bold;
+}
+section#feedback-form button:hover{
+    color:var(--colorOne);
+    background-color:var(--colorThree);
+}
+section#feedback-form input::placeholder{
+    margin-bottom:20px;
+    text-align:center;
+}
+
+
+form#search-author{
+    display: inline;
+    margin-top: 40px;
+
+}
+
+form input#searchinput{
+    width: 350px;
+    height: 40px;
+    margin-left: 20px;  
+    border-radius: 5px; 
+}
+
+form button#search-button{
+    height: 30px;
+    border-radius: 15px;
+    margin-left: 10px;
+    width: 50px;
+}
+
+form input#search-input::placeholder{
+    text-align: left;
+    
+}
+
+form button#search-button:hover{
+    color: var(--colorOne);
+}
+
+form p#search-message{
+    color: var(--colorTwo);
+}
+
