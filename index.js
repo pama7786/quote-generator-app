@@ -47,5 +47,36 @@ document.addEventListener("DOMContentLoaded", function(){
     randomQuote();
   
     // Section 2: Search Quote
-   
+    function searchQuote(){
+      document.querySelector("form#search-author").addEventListener("submit", function(e){
+        e.preventDefault();
+        let name = e.target.searchinput.value;
+        if (name === ""){
+          alert("No valid input");
+        } else {
+          let authors = document.querySelectorAll("div#listFavourite p.authorName");
+          let authors2 = document.querySelectorAll("div#listFavourite p.authorName");
+          for(let author2 of authors2){
+            let quoteName2 = author2.previousSibling;
+            quoteName2.style.color = "black";
+            author2.style.color = "black";
+          }
   
+          console.log(authors);
+          for(let author of authors){
+            let nameCheck = author.textContent;
+            if(`~ ${name}` === nameCheck || name === nameCheck){
+              let quoteName = author.previousSibling;
+              quoteName.scrollIntoView();
+              quoteName.style.color = "red";
+              author.style.color = "red";
+              console.log(author);
+            }
+          }
+        }
+      });
+    }
+  
+    searchQuote();
+  
+   
