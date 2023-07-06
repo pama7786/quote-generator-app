@@ -11,3 +11,39 @@
     --colorFour: #7b2cbf;
 
 }
+
+/* section #signUp */
+section#signUp{
+    font-size: 30px;
+    background-color: var(--colorOne);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    margin-top: 100px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+input{
+    font-size: 20px;
+    background-color: var(--colorTwo);
+    color: var(--colorThree);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    width: 350px;
+    margin-bottom: 40px;
+    height: 40px;
+}
+
+button#sign-up-button{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100px;
+    border-radius: 20px;
+    height: 40px;
+
+}
+
+section#sign-up form h4{
+    padding-top: 20px;
+}
