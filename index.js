@@ -126,4 +126,24 @@ document.addEventListener("DOMContentLoaded", function(){
   
   alertFeedBack();
   
- 
+  // Section 7: Sign Up Form Alert
+  function alertsignup(){
+    document.querySelector("form#user-details").addEventListener("submit", function (event){
+      event.preventDefault();
+      let username = event.target.name.value;
+      let emailAdress = event.target.email.value;
+      let userPassword = event.target.pass.value;
+      if (userPassword === "" || username === "" || emailAdress === ""){
+        alert("Please fill all the empty spaces");
+      } else {
+        document.querySelector("form#user-details").reset();
+        document.querySelector("section#signUp").style.display = "none";
+        submitAlert();
+      }
+    });
+  }
+  
+  alertsignup();
+  
+  });
+  
