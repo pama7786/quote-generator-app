@@ -79,4 +79,14 @@ document.addEventListener("DOMContentLoaded", function(){
   
     searchQuote();
   
-   
+    // Section 3: Sign Up Form
+    function signupForm() {
+      document.querySelector("section#signUp").style.display = "none";
+      let signUp = document.querySelector("p#sign-up-nav-bar");
+      signUp.addEventListener("click", function () {
+        document.querySelector("section#signUp").setAttribute("style", "");
+      });
+    }
+  
+    signupForm();
+  
