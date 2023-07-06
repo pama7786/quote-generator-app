@@ -2,12 +2,13 @@
 
  This is a simple web application that generates random quotes from an API and allows users to like and save their favorite quotes. It also includes a search functionality to find quotes by author name.
 
-- You can use this link to access the deployed site 
-     - 
+- You can use this link to access the deployed site
+  
+     - https://pama7786.github.io/quote-generator-app/
 
 - There are two parts of this page
 
-** Menu section ** 
+## Menu section ##
 
  - There several nav bars;
 
@@ -16,7 +17,7 @@
      - A favourites quotes bar where after you add some quotes to your favourite quotes and you'd like to view them, you click on it and it will directly take you to those quotes.
      - There is a search bar where you can search a specific quote that is in your favourite quotes by entering the author's name and clicking search, it will highlight that quote and the authors name. 
 
-** Body section ** 
+## Body section ## 
 
 - In the body section there is a quote area where the quote is and the author. 
 
@@ -43,11 +44,11 @@
 
 - Clone the repo by using the following to create a copy on your local machine:
 
-    - git clone git@github.com:ismahaneyy/phase-1-javascript-project-mode.git
+    - git clone git@github.com:pama7786/quote-generator-app.git
 
 - Change directory to the repo folder:
 
-    - cd phase-1-javascript-project-mode
+    - cd quote-generator-app
 
 - Open it in Visual Studio Code
 
@@ -58,7 +59,7 @@
 
  ```bash
    
-   
+   https://pama7786.github.io/quote-generator-app/
 
  ```
 
