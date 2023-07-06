@@ -90,3 +90,22 @@ document.addEventListener("DOMContentLoaded", function(){
   
     signupForm();
   
+    // Section 4: Feedback Form
+    function feedBackForm(){
+      document.querySelector("section#feedback-form").style.display = "none";
+      document.querySelector("p#leave-feedback").addEventListener("click",function(){
+        document.querySelector("section#feedback-form").setAttribute("style","");
+      });
+    }
+  
+    feedBackForm();
+  
+    // Section 5: Submit Alert
+    function submitAlert() {
+      function alertTimeout() {
+        alert("Thank you for signing up");
+      }
+      setTimeout(alertTimeout, 5);
+    }
+  
+    /
