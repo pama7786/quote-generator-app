@@ -46,3 +46,6 @@ document.addEventListener("DOMContentLoaded", function(){
     quoteBtn.addEventListener("click", randomQuote);
     randomQuote();
   
+    // Section 2: Search Quote
+   
+  
