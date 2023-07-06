@@ -108,4 +108,22 @@ document.addEventListener("DOMContentLoaded", function(){
       setTimeout(alertTimeout, 5);
     }
   
-   
+    // Section 6: Feedback Form Alert
+    function alertFeedBack(){
+      document.querySelector("form#feedBack").addEventListener("submit", function (event){
+      event.preventDefault();
+      let feedbackMsgs = event.target.feedbackinput.value;
+      let feedbackNme = event.target.feedbackname.value;
+      if (feedbackMsgs === "" || feedbackNme === ""){
+        alert("Please fill all the empty spaces");
+      } else {
+        document.querySelector("form#feedBack").reset();
+        document.querySelector("section#feedback-form").style.display = "none";
+        submitAlert();
+      }
+    });
+  }
+  
+  alertFeedBack();
+  
+ 
