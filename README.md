@@ -6,16 +6,16 @@
   
      - https://pama7786.github.io/quote-generator-app/
 
-- There are two parts of this page
+- There are two parts to this page
 
 ## Menu section ##
 
- - There several nav bars;
+ - There are several nav bars;
 
      - Sign up bar where you can sign up to the page.
-     - A feedback form where you can give feedback of how the page is. 
-     - A favourites quotes bar where after you add some quotes to your favourite quotes and you'd like to view them, you click on it and it will directly take you to those quotes.
-     - There is a search bar where you can search a specific quote that is in your favourite quotes by entering the author's name and clicking search, it will highlight that quote and the authors name. 
+     - A feedback form where you can give feedback on how the page is. 
+     - A favorites quotes bar where after you add some quotes to your favorite quotes and you'd like to view them, you click on it and it will directly take you to those quotes.
+     - There is a search bar where you can search for a specific quote that is in your favorite quotes by entering the author's name and clicking search, it will highlight that quote and the author's name. 
 
 ## Body section ## 
 
@@ -24,7 +24,7 @@
 - There are three icons just beneath the author's name;
 
      - Favourite icon; 
-     - When you like a quote and you'd like to add it in your favourites, you click this icon, it changes the color to red and that quote will automatically be displayed under "your favourite quotes :)" heading.
+     - When you like a quote and you'd like to add it to your favorites, you click this icon, it changes the color to red and that quote will automatically be displayed under the "your favorite quotes :)" heading.
 
      - Copy icon;
      - When you click it, it will copy the quote to your clipboard.
@@ -32,21 +32,21 @@
      - Like icon;
      - When you like the quote that is displayed, you can click it and it will change color to red.  
 
-- There is a button, new quote where when you click, it it will display a different quote from the previous one.As the page loads a new quote, its text content is "loading quote...".   
+- There is a button, a new quote where when you click, it it will display a different quote from the previous one. As the page loads a new quote, its text content is "loading quote...".   
 
-- There is a heading Your Favourite quotes :). It displays your favourite quotes and the author's name.
+- There is a heading Your Favourite quotes :). It displays your favorite quotes and the author's name.
 
 ## Setup instructions
 
 - To use this repository on your machine requires some simple steps:
 
-    - Open a terminal / command line interface on your computer
+    - Open a terminal/command line interface on your computer
 
 - Clone the repo by using the following to create a copy on your local machine:
 
     - git clone git@github.com:pama7786/quote-generator-app.git
 
-- Change directory to the repo folder:
+- Change the directory to the repo folder:
 
     - cd quote-generator-app
 
@@ -95,7 +95,7 @@ Follow these steps to run the application:
 
 9. To sign up for updates or newsletters, click the "Sign Up" link in the navigation bar. Fill out the sign-up form with your name, email, and password. Submit the form, and an alert message will appear to confirm the sign-up.
 
-10. Enjoy exploring random quotes, liking your favorites, and searching for quotes by author!
+10. Enjoy exploring random quotes, liking your favorites, and searching for quotes by the author!
 
 ## Technologies Used
 
