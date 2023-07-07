@@ -2,9 +2,11 @@
 
  This is a simple web application that generates random quotes from an API and allows users to like and save their favorite quotes. It also includes a search functionality to find quotes by author name.
 
-- You can use this link to access the deployed site
+- You can use this links to access the deployed site
   
      - https://pama7786.github.io/quote-generator-app/
+ 
+     - https://64a82d90721a300944311037--comforting-platypus-6c4938.netlify.app/
 
 - There are two parts to this page
 
