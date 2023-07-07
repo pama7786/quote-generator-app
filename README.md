@@ -56,12 +56,8 @@
 
 - OR : 
 - You can use this link to access the deployed site;
-
- ```bash
-   
-   https://pama7786.github.io/quote-generator-app/
-
- ```
+  
+- https://64a82d90721a300944311037--comforting-platypus-6c4938.netlify.app/
 
 
 
