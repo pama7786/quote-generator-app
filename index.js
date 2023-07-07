@@ -1,149 +1,196 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function() {
 
-    // Section 1: Random Quote
-    const quoteText = document.querySelector(".quote");
-    const authorName = document.querySelector(".name");
-    let quoteBtn = document.querySelector("button#quote");
-    let favouriteBtn = document.querySelector("#Favourite");
-    let likeBtn = document.querySelector(".like");
-  
-    function randomQuote(){
-      quoteBtn.innerText = "loading Quote...";
-      fetch("https://api.quotable.io/random")
-        .then(res => res.json())
-        .then(function(data) {
-          console.log(data);
-          quoteText.innerText = data.content;
-          authorName.innerText = data.author;
-  
-          likeBtn.addEventListener("click", ()=>{
-            likeBtn.style.color = "Red";
-          });
-  
-          favouriteBtn.addEventListener("click", ()=>{
-            favouriteBtn.style.color ="Red";
-            let li = document.createElement("li");
-            li.innerHTML = data.content;
-            let p = document.createElement("p");
-            p.innerHTML = `~ ${data.author}`;
-            p.setAttribute("class", "authorName");
-            let div = document.getElementById("listFavourite");
-            div.append(li);
-            div.append(p);
-          },{once: true});
-  
-          quoteBtn.innerText = "New Quote";
-          likeBtn.style.color = "#7b2cbf";
-          favouriteBtn.style.color = "#7b2cbf";
+  const quoteText = document.querySelector(".quote");
+  const authorName = document.querySelector(".name");
+  let quoteBtn = document.querySelector("button#quote");
+  let favouriteBtn = document.querySelector("#Favourite");
+  let likeBtn = document.querySelector(".like");
+
+  function randomQuote() {
+    quoteBtn.innerText = "loading Quote..."; // while a new quote is loading, the text in the quotebtn reads loading Quote...
+    fetch("https://api.quotable.io/random") // gets the API
+      .then(res => res.json()) // brings data as a promise
+      .then(function(data) {
+        console.log(data); // returns the data
+        quoteText.innerText = data.content;
+        authorName.innerText = data.author;
+
+        likeBtn.addEventListener("click", () => {
+          likeBtn.style.color = "Red"; // changing the like button to red when clicked
         });
-  
-      let copyBtn = document.querySelector(".copy");
-      copyBtn.addEventListener("click", ()=>{
-        navigator.clipboard.writeText(quoteText.innerText);
+
+        favouriteBtn.addEventListener("click", () => {
+          favouriteBtn.style.color = "Red"; // changing the favourite button to red when clicked
+          let li = document.createElement("li"); // creating an li to list all the quotes added to favourite
+          li.innerHTML = data.content;
+          let p = document.createElement("p");
+          p.innerHTML = `~ ${data.author}`;
+          p.setAttribute("class", "authorName");
+          let div = document.getElementById("listFavourite");
+          div.append(li); // appending li to div
+          div.append(p); // appending p to div
+        }, { once: true });
+
+        quoteBtn.innerText = "New Quote"; // when the quote loads the button text changes to new quote
+        likeBtn.style.color = "#7b2cbf"; // the color of the like button changed back to the original color when a new quote is displayed
+        favouriteBtn.style.color = "#7b2cbf"; // the color of the favourite button changed back to the original color when a new quote is displayed
       });
-    }
-  
-    quoteBtn.addEventListener("click", randomQuote);
-    randomQuote();
-  
-    // Section 2: Search Quote
-    function searchQuote(){
-      document.querySelector("form#search-author").addEventListener("submit", function(e){
-        e.preventDefault();
-        let name = e.target.searchinput.value;
-        if (name === ""){
-          alert("No valid input");
-        } else {
-          let authors = document.querySelectorAll("div#listFavourite p.authorName");
-          let authors2 = document.querySelectorAll("div#listFavourite p.authorName");
-          for(let author2 of authors2){
-            let quoteName2 = author2.previousSibling;
-            quoteName2.style.color = "black";
-            author2.style.color = "black";
-          }
-  
-          console.log(authors);
-          for(let author of authors){
-            let nameCheck = author.textContent;
-            if(`~ ${name}` === nameCheck || name === nameCheck){
-              let quoteName = author.previousSibling;
-              quoteName.scrollIntoView();
-              quoteName.style.color = "red";
-              author.style.color = "red";
-              console.log(author);
-            }
+
+    let copyBtn = document.querySelector(".copy"); // to copy the quote to clipboard
+    copyBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText(quoteText.innerText);
+    });
+  }
+
+  function searchQuote() {
+    document.querySelector("form#search-author").addEventListener("submit", function(e) { // adding event listener submit
+      e.preventDefault();
+      let name = e.target.searchinput.value;
+      if (name === "") {
+        alert("No valid input");
+      } else {
+        let authors = document.querySelectorAll("div#listFavourite p.authorName"); // getting all the authors name
+        let authors2 = document.querySelectorAll("div#listFavourite p.authorName");
+        for (let author2 of authors2) {
+          let quoteName2 = author2.previousSibling; // getting the quotes
+          quoteName2.style.color = "black"; // changes to black after the first loop when a new author name is entered
+          author2.style.color = "black"; // changes to black after the first loop when a new author name is entered
+        }
+        console.log(authors);
+        for (let author of authors) {
+          let nameCheck = author.textContent;
+          if (`~ ${name}` === nameCheck || name === nameCheck) { // when one searches the author name only or the authorname with this ~
+            let quoteName = author.previousSibling; // getting the quotes
+            quoteName.scrollIntoView(); // when the author name is searched, it directly scrolls to the specific quote and the author name
+            quoteName.style.color = "red"; // changes to red to show it's the quote being searched
+            author.style.color = "red"; // changes to red to show the author's name being searched
+            console.log(author);
           }
         }
-      });
-    }
-  
-    searchQuote();
-  
-    // Section 3: Sign Up Form
-    function signupForm() {
-      document.querySelector("section#signUp").style.display = "none";
-      let signUp = document.querySelector("p#sign-up-nav-bar");
-      signUp.addEventListener("click", function () {
-        document.querySelector("section#signUp").setAttribute("style", "");
-      });
-    }
-  
-    signupForm();
-  
-    // Section 4: Feedback Form
-    function feedBackForm(){
-      document.querySelector("section#feedback-form").style.display = "none";
-      document.querySelector("p#leave-feedback").addEventListener("click",function(){
-        document.querySelector("section#feedback-form").setAttribute("style","");
-      });
-    }
-  
-    feedBackForm();
-  
-    // Section 5: Submit Alert
-    function submitAlert() {
-      function alertTimeout() {
-        alert("Thank you for signing up");
-      }
-      setTimeout(alertTimeout, 5);
-    }
-  
-    // Section 6: Feedback Form Alert
-    function alertFeedBack(){
-      document.querySelector("form#feedBack").addEventListener("submit", function (event){
-      event.preventDefault();
-      let feedbackMsgs = event.target.feedbackinput.value;
-      let feedbackNme = event.target.feedbackname.value;
-      if (feedbackMsgs === "" || feedbackNme === ""){
-        alert("Please fill all the empty spaces");
-      } else {
-        document.querySelector("form#feedBack").reset();
-        document.querySelector("section#feedback-form").style.display = "none";
-        submitAlert();
       }
     });
   }
-  
+
+  searchQuote();
+
+  quoteBtn.addEventListener("click", randomQuote); // when clicked a new quote is dispalyed
+  randomQuote();
+
+  function signupForm() {
+    document.querySelector("section#signUp").style.display = "none"; // to hide the form
+    let signUp = document.querySelector("p#sign-up-nav-bar");
+    signUp.addEventListener("click", function() {
+      document.querySelector("section#signUp").setAttribute("style", ""); // shows the form
+    });
+  }
+
+  signupForm();
+
+  function feedBackForm() {
+    document.querySelector("section#feedback-form").style.display = "none"; // to hide it when it's not in use
+    document.querySelector("p#leave-feedback").addEventListener("click", function() {
+      document.querySelector("section#feedback-form").setAttribute("style", ""); // shows the form
+    });
+  }
+
+  feedBackForm();
+
+  function submitAlert() { // to alert the user for signing up
+    function alertTimeout() {
+      alert("Thank you for signing up");
+    }
+    setTimeout(alertTimeout, 5);
+  }
+
+  function alertFeedBack() {
+    document.querySelector("form#feedBack")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+        let feedbackMsgs = event.target.feedbackinput.value;
+        let feedbackNme = event.target.feedbackname.value;
+        if (feedbackMsgs === "" || feedbackNme === "") {
+          alert("Please fill all the empty spaces");
+        } else {
+          document.querySelector("form#feedBack").reset();
+          document.querySelector("section#feedback-form").style.display = "none";
+          submitAlert();
+        }
+      });
+  }
+
   alertFeedBack();
-  
-  // Section 7: Sign Up Form Alert
-  function alertsignup(){
-    document.querySelector("form#user-details").addEventListener("submit", function (event){
-      event.preventDefault();
-      let username = event.target.name.value;
-      let emailAdress = event.target.email.value;
-      let userPassword = event.target.pass.value;
-      if (userPassword === "" || username === "" || emailAdress === ""){
-        alert("Please fill all the empty spaces");
-      } else {
-        document.querySelector("form#user-details").reset();
-        document.querySelector("section#signUp").style.display = "none";
-        submitAlert();
-      }
-    });
+
+  function alertsignup() {
+    document.querySelector("form#user-details")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+        let username = event.target.name.value;
+        let emailAdress = event.target.email.value;
+        let userPassword = event.target.pass.value;
+        if (userPassword === "" || username === "" || emailAdress === "") {
+          alert("Please fill all the empty spaces");
+        } else {
+          document.querySelector("form#user-details").reset();
+          document.querySelector("section#signUp").style.display = "none";
+          submitAlert();
+        }
+      });
   }
-  
+
   alertsignup();
+
+});
+
   
-  });
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
